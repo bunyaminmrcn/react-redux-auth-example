@@ -1,0 +1,9 @@
+
+# Depencencies
+server/node_modules/
+client/node_modules/
+
+
+# Lock files
+server/package-lock.json
+client/package-lock.json
