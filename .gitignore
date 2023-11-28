@@ -10,3 +10,5 @@ client/package-lock.json
 
 # env files
 server/.env
+server/es512-private.pem
+server/es512-public.pem

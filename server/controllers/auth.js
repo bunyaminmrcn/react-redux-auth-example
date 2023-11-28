@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const jwtManager = require('../jwt-manager');
 
 
 exports.signUp = async (req, res, next) => {
@@ -14,10 +15,13 @@ exports.signUp = async (req, res, next) => {
 
         const newRecord = new User({
             email,
-            password
+            password,
+            role: 'user'
         })
         await newRecord.save();
-        return res.json({ success: true })
+
+        const token = jwtManager.sign({role: newRecord.role})
+        return res.json({ success: true , token })
     }
 
 }
