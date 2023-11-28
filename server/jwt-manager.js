@@ -23,5 +23,7 @@ module.exports = {
                 return truth;
             }
         })
-    
+    ,
+    public: () => publicKey_,
+    private: () => privateKey_
 }

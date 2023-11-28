@@ -20,7 +20,7 @@ exports.signUp = async (req, res, next) => {
         })
         await newRecord.save();
 
-        const token = jwtManager.sign({role: newRecord.role})
+        const token = jwtManager.sign({role: newRecord.role, id: newRecord._id})
         return res.json({ success: true , token })
     }
 

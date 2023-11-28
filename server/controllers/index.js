@@ -2,8 +2,20 @@ const express = require('express');
 const router = express.Router();
 const jwtManager = require('../jwt-manager');
 
+const passport = require('passport')
+const passportService = require('../services/passport');
+const requireAuth = passportService.authenticate('jwt', {
+    session: false
+})
+
 const auth = require('./auth');
 router.post('/auth/signUp', auth.signUp)
+
+
+router.get('/auth/protected', requireAuth, (req, res) => {
+    return res.json({msg: 'hi there'})
+})
+
 router.post('/auth/protected',
     (req, res, next) => {
         console.log(req.headers)
