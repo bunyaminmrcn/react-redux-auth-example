@@ -17,6 +17,7 @@ app.use(morgan('combined'));
 mongoose.connect(process.env.ME_CONFIG_MONGODB_URL)
   .then(() => console.log('Connected!'));
 
+app.use('/api', require('./controllers/index'));
 
 const PORT = process.env.PORT || 3090;
 app.listen(PORT, () => {
