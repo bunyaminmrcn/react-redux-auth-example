@@ -9,7 +9,7 @@ var publicKey_ = fs.readFileSync('./es512-public.pem')
 
 module.exports = {
     sign: (user)=> {
-        const token = jwt.sign({ user }, privateKey_, {
+        const token = jwt.sign(user , privateKey_, {
             expiresIn: "1h",
             algorithm: 'ES512'
           });

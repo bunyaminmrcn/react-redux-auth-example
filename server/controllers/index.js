@@ -8,12 +8,25 @@ const requireAuth = passportService.authenticate('jwt', {
     session: false
 })
 
+const requireSigIn = passportService.authenticate('local', {
+    session: false
+})
+
+
 const auth = require('./auth');
 router.post('/auth/signUp', auth.signUp)
 
 
 router.get('/auth/protected', requireAuth, (req, res) => {
-    return res.json({msg: 'hi there'})
+    return res.json({msg: 'hi there- JWT Route'})
+})
+
+router.post('/auth/protected-2', requireSigIn, (req, res) => {
+
+    //console.log({user: req.user})
+    const { _id, role } = req.user;
+
+    return res.json({token: jwtManager.sign({ id: _id, role})})
 })
 
 router.post('/auth/protected',
