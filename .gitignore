@@ -7,3 +7,6 @@ client/node_modules/
 # Lock files
 server/package-lock.json
 client/package-lock.json
+
+# env files
+server/.env
