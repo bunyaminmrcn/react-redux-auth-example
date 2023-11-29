@@ -1,4 +1,11 @@
-export default (props) => {
+import Header from "./Header"
 
-    return <div>Hello World</div>
+export default ({children}) => {
+
+    return (
+        <div>
+            <Header />
+            { children }
+        </div>
+    )
 }
