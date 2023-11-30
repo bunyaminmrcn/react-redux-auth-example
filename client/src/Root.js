@@ -9,7 +9,7 @@ export default ({ children, initialState = {} }) => {
     const store = configureStore({
         // Automatically calls `combineReducers`
         reducer: rootReducer,
-        preloadedState: initialState,
+        preloadedState: { auth: { authenticated: localStorage.getItem('token') } },
         middleware: [reduxThunk]
     })
 
