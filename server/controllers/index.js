@@ -21,7 +21,7 @@ router.get('/auth/protected', requireAuth, (req, res) => {
     return res.json({msg: 'hi there- JWT Route'})
 })
 
-router.post('/auth/protected-2', requireSigIn, (req, res) => {
+router.post('/auth/signin', requireSigIn, (req, res) => {
 
     //console.log({user: req.user})
     const { _id, role } = req.user;
