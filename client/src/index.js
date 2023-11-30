@@ -5,20 +5,20 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import App from "./components/App";
 import Welcome from './components/Welcome';
+import Signup from "./components/auth/Signup";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
     <Root>
-        <React.StrictMode>
-            <BrowserRouter>
-                <App>
-                    <Routes>
-                        <Route path="/" Component={Welcome}></Route>
-                    </Routes>
-                </App>
-            </BrowserRouter>
-        </React.StrictMode>
+        <BrowserRouter>
+            <App>
+                <Routes>
+                    <Route path="/" Component={Welcome}></Route>
+                    <Route path="/signup" Component={Signup}></Route>
+                </Routes>
+            </App>
+        </BrowserRouter>
     </Root>
 )
