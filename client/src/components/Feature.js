@@ -1,7 +1,12 @@
 import { Component } from "react";
+import requireAuth from "./requireAuth";
 
-export default class Feature extends Component {
+
+class Feature extends Component {
     render() {
         return <div> This is feature</div>
     }
 }
+
+
+export default requireAuth(Feature);
