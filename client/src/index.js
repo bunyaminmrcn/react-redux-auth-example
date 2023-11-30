@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from "./components/App";
 import Welcome from './components/Welcome';
 import Signup from "./components/auth/Signup";
+import Signout from "./components/auth/Signout";
+
 import Feature from "./components/Feature";
 
 const container = document.getElementById('root');
@@ -19,6 +21,8 @@ root.render(
                     <Route path="/" Component={Welcome}></Route>
                     <Route path="/signup" Component={Signup}></Route>
                     <Route path="/feature" Component={Feature}></Route>
+                    <Route path="/signout" Component={Signout}></Route>
+
                 </Routes>
             </App>
         </BrowserRouter>
