@@ -10,7 +10,7 @@ exports.signUp = async (req, res, next) => {
     }
     const record = await User.findOne({ email });
     if (record) {
-        return res.json({ success: false, msg: 'Email in use!' })
+        return res.status(403).json({ success: false, msg: 'Email in use!' })
     } else {
 
         const newRecord = new User({
